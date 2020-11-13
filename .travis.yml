@@ -1,0 +1,26 @@
+language: java
+
+before_install:
+  - chmod +x gradlew
+
+matrix:
+  include:
+    - jdk: openjdk8
+      os: osx
+    - jdk: openjdk11
+      os: linux
+  allow_failures:
+    - os: osx
+
+git:
+  depth: false
+
+notifications:
+  email:
+    recipients:
+      - s4svfier@uni-trier.de
+    on_success: always # default: change
+    on_failure: always # default: always
+
+script:
+  - ./gradlew buildCore

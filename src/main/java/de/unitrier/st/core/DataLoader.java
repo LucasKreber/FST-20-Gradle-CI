@@ -5,7 +5,8 @@ import java.io.*;
 public class DataLoader {
 
     public String loadJsonFile(String name) {
-        File file = new File(getClass().getResource("/"+name).getFile());
+        //File file = new File(getClass().getResource("/"+name).getFile());
+		File file = new File("src/main/resources/"+name);
         StringBuilder json = new StringBuilder();
 
         try {
